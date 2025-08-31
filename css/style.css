@@ -1,14 +1,79 @@
-/* --- Text-Logo: "KI" weiß, "4U" neonblau --- */
-.logo-text{
-  font-family:'Orbitron',monospace;
-  font-weight:900;
-  letter-spacing:.5px;
-  display:inline-flex; align-items:center; gap:.1em;
-  color:#fff; /* Basis = weiß */
+/* Reset & Vars */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --neon:#00ffff;
+  --bg:#07090c;          /* sehr dunkles Grau, nicht hartes Schwarz */
+  --bg-2:#0b0f13;
+  --text:#ffffff;
+  --muted:#bfc7cf;
+  --border:rgba(0,255,255,.25);
+  --shadow:0 0 20px rgba(0,255,255,.25);
+  --radius:14px;
+  --max:1200px;
 }
-.logo-text.big{ font-size:3rem; }  /* für Hero */
-.ki{ color:#ffffff; }
-.fouru{
-  color:#00ffff;
-  text-shadow:0 0 6px #00ffff, 0 0 14px rgba(0,255,255,.55);
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1000px 700px at 20% 15%, #0f141a 0%, transparent 60%),
+    radial-gradient(900px 600px at 80% 85%, #0a0f14 0%, transparent 55%),
+    var(--bg);
+  line-height:1.6;
+}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 5%}
+.nav-links{list-style:none;display:flex;gap:24px}
+.nav-links a{color:var(--text);text-decoration:none;position:relative}
+.nav-links a:hover{color:var(--neon);text-shadow:0 0 6px var(--neon)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--neon);transition:.25s}
+.nav-links a:hover::after{width:100%}
+
+/* Text-Logo: KI weiß, 4U neonblau */
+.logo-text{font-family:'Orbitron',monospace;font-weight:900;letter-spacing:.5px;color:#fff;display:inline-flex;gap:.12em;align-items:center}
+.logo-text.big{font-size:3rem}
+.ki{color:#fff}
+.fouru{color:var(--neon);text-shadow:0 0 6px var(--neon),0 0 16px rgba(0,255,255,.5)}
+
+/* Hero */
+.hero{min-height:72vh;display:grid;place-items:center;text-align:center;padding:8rem 5% 5rem}
+.hero-title{margin-bottom:10px}
+.hero-sub{color:var(--muted);margin-bottom:24px}
+.cta-button{display:inline-block;padding:14px 28px;border:2px solid var(--neon);color:var(--neon);text-decoration:none;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;transition:.25s}
+.cta-button:hover{background:var(--neon);color:#031014;box-shadow:var(--shadow);transform:translateY(-1px)}
+.cta-button.full{width:100%}
+
+/* Sections */
+.section{max-width:var(--max);margin:0 auto;padding:5rem 5%}
+.section.alt{background:rgba(255,255,255,.02);border-block:1px solid var(--border)}
+.section-title{font-family:'Orbitron',monospace;font-size:2.2rem;color:var(--neon);text-shadow:0 0 10px rgba(0,255,255,.5);text-align:center;margin-bottom:2.5rem}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.card{background:rgba(0,0,0,.6);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;transition:.25s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.icon{font-size:2rem;margin-bottom:.6rem;color:var(--neon);text-shadow:0 0 10px rgba(0,255,255,.5)}
+
+/* Contact */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.container.narrow{max-width:800px;margin:0 auto}
+.contact-form,.contact-info{background:rgba(0,0,0,.6);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem}
+.field{margin-bottom:1rem}
+label{display:block;margin-bottom:.4rem;color:var(--neon);font-weight:600}
+input,textarea{width:100%;padding:.8rem;border:1px solid var(--border);border-radius:10px;background:#070b0f;color:var(--text)}
+input:focus,textarea:focus{outline:none;border-color:var(--neon);box-shadow:0 0 12px rgba(0,255,255,.25)}
+.info-row{color:var(--muted);margin-bottom:.6rem}
+
+/* Footer */
+.site-footer{padding:2rem 5%;text-align:center;border-top:1px solid var(--border);background:#06090d}
+.footer-logo{margin-bottom:.4rem}
+.muted{color:var(--muted);font-size:.95rem}
+
+/* Responsive */
+@media (max-width:768px){
+  .nav-links{display:none}
+  .logo-text.big{font-size:2.4rem}
+  .grid-2{grid-template-columns:1fr}
 }
