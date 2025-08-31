@@ -8,28 +8,6 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- animierter Hintergrund -->
-  <!-- Motherboard Background (dezent animiert) -->
-<div class="bg-mobo" aria-hidden="true">
-  <svg id="mobo-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="trace" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%"  stop-color="#00ffff" stop-opacity="0.35"/>
-        <stop offset="100%" stop-color="#00ffff" stop-opacity="0.1"/>
-      </linearGradient>
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="2" result="blur"/>
-        <feMerge>
-          <feMergeNode in="blur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-    </defs>
-<header>
-  <nav>
-    <!-- HIER DEIN NEUES LOGO REIN -->
-    <a href="#home" class="logo" aria-label="KI4U Startseite">
-      <span class="logo-fallback">KI<span class="neon-4u">4U</span></span>
     </a>
 
     <ul class="nav-links">
@@ -40,29 +18,6 @@
     </ul>
   </nav>
 </header>
-
-    <!-- Leiterbahnen (ein paar beispielhafte Pfade, animiert) -->
-    <g stroke="url(#trace)" stroke-width="2" fill="none" filter="url(#glow)" opacity="0.55">
-      <path class="trace" d="M80 140 H450 V220 H780" />
-      <path class="trace" d="M120 320 H520 V160 H1180 V300" />
-      <path class="trace" d="M140 700 H360 V520 H920 V440 H1460" />
-      <path class="trace" d="M40 520 H300 V620 H520 V780" />
-      <path class="trace" d="M980 140 V340 H1420 V520" />
-    </g>
-
-    <!-- Knoten/LEDs (leichtes Blinken) -->
-    <g fill="#00ffff">
-      <circle class="led" cx="450" cy="220" r="3"/>
-      <circle class="led" cx="780" cy="220" r="3"/>
-      <circle class="led" cx="520" cy="160" r="3"/>
-      <circle class="led" cx="1180" cy="300" r="3"/>
-      <circle class="led" cx="360" cy="520" r="3"/>
-      <circle class="led" cx="920" cy="440" r="3"/>
-      <circle class="led" cx="1420" cy="520" r="3"/>
-    </g>
-  </svg>
-</div>
-
 
   <!-- Header -->
   <header>
