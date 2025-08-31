@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KI4U - Die Plattform für digitales Wachstum</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- animierter Hintergrund -->
+  <div class="bg-grid" aria-hidden="true"></div>
 
   <!-- Header -->
   <header>
     <nav>
       <a href="#home" class="logo" aria-label="KI4U Startseite">
-        <span class="logo-text"><span class="ki">KI</span><span class="fouru">4U</span></span>
+        <!-- kleines Logo (inline SVG, kein extra Bild nötig) -->
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZGVmcz4KICA8cmFkaWFsR3JhZGllbnQgaWQ9Im5lb25HbG93IiBjeD0iMCUiIGN5PSIwJSIgcj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBmZmZmIiBzdG9wLW9wYWNpdHk9IjAuOCIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMwMGZmZmYiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvcmFkaWFsR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0ibmVvbkdsb3dGaWx0ZXIiPgogICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iNCIgcmVzdWx0PSJjb2xvcmVkQmx1ciIvPgogICAgPGZlTWVyZ2U+CiAgICAgIDxmZU1lcmdlTm9kZSBpbj0iY29sb3JlZEJsdXIiLz4KICAgICAgPGZlTWVyZ2VOb2RlIGluPSJTb3VyY2VHcmFwaGljIi8+CiAgICA8L2ZlTWVyZ2U+CiAgPC9maWx0ZXI+CjwvZGVmcz4KCjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiMwMDAwMDAiLz4KCjwhLS0gSyAtLT4KPGcgZmlsbD0iI2ZmZmZmZiI+CiAgPGNpcmNsZSBjeD0iMjUiIGN5PSIyMCIgcj0iNCIvPgogIDxjaXJjbGUgY3g9IjI1IiBjeT0iNjAiIHI9IjQiLz4KICA8bGluZSB4MT0iMjkiIHkxPSIyMCIgeDI9IjMwIiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPGxpbmUgeDE9IjM1IiB5MT0iMzUiIHgyPSI1NSIgeTI9IjIwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxsaW5lIHgxPSIzNSIgeTE9IjQ1IiB4Mj0iNTUiIHkyPSI2MCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjUiLz4KPC9nPgoKPCEtLSBJIC0tPgo8cmVjdCB4PSI3NSIgeT0iMjAiIHdpZHRoPSI4IiBoZWlnaHQ9IjQwIiBmaWxsPSIjZmZmZmZmIi8+Cgo8IS0tIDQgLS0+CjxnIGZpbGw9IiMwMGZmZmYiIGZpbHRlcj0idXJsKCNuZW9uR2xvd0ZpbHRlcikiPgogIDxyZWN0IHg9IjEwNSIgeT0iMjAiIHdpZHRoPSI4IiBoZWlnaHQ9IjIwIi8+CiAgPHJlY3QgeD0iMTA1IiB5PSI0NSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjgiLz4KICA8cmVjdCB4PSIxMjciIHk9IjIwIiB3aWR0aD0iOCIgaGVpZ2h0PSI0MCIvPgo8L2c+Cgo8IS0tIFUgLS0+CjxnIGZpbGw9IiMwMGZmZmYiIGZpbHRlcj0idXJsKCNuZW9uR2xvd0ZpbHRlcikiPgogIDxyZWN0IHg9IjE1NSIgeT0iMjAiIHdpZHRoPSI4IiBoZWlnaHQ9IjMyIi8+CiAgPHJlY3QgeD0iMTc3IiB5PSIyMCIgd2lkdGg9IjgiIGhlaWdodD0iMzIiLz4KICA8cmVjdCB4PSIxNTUiIHk9IjUyIiB3aWR0aD0iMzAiIGhlaWdodD0iOCIvPgo8L2c+Cjwvc3ZnPgo=" alt="KI4U Logo">
       </a>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
@@ -27,7 +30,8 @@
   <!-- Hero -->
   <section id="home" class="hero">
     <h1 class="fade-in">
-      <span class="logo-text big"><span class="ki">KI</span><span class="fouru">4U</span></span>
+      <!-- großes Logo (inline SVG) -->
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDMwMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxkZWZzPgogIDxyYWRpYWxHcmFkaWVudCBpZD0ibmVvbkdsb3ciIGN4PSIwJSIgY3k9IjAlIiByPSIxMDAlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMGZmZmYiIHN0b3Atb3BhY2l0eT0iMC44Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzAwZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjQiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8ZmlsdGVyIGlkPSJuZW9uR2xvd0ZpbHRlciI+CiAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI2IiByZXN1bHQ9ImNvbG9yZWRCbHVyIi8+CiAgICA8ZmVNZXJnZT4KICAgICAgPGZlTWVyZ2VOb2RlIGluPSJjb2xvcmVkQmx1ciIvPgogICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz4KICAgIDwvZmVNZXJnZT4KICA8L2ZpbHRlcj4KPC9kZWZzPgoKPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxMjAiIGZpbGw9InRyYW5zcGFyZW50Ii8+Cgo8IS0tIEsgLS0+CjxnIGZpbGw9IiNmZmZmZmYiPgogIDxjaXJjbGUgY3g9IjQwIiBjeT0iMzAiIHI9IjYiLz4KICA8Y2lyY2xlIGN4PSI0MCIgY3k9IjkwIiByPSI2Ii8+CiAgPGxpbmUgeDE9IjQ2IiB5MT0iMzAiIHgyPSI0OCIgeTI9IjkwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iOCIvPgogIDxsaW5lIHgxPSI1NSIgeTE9IjUyIiB4Mj0iODAiIHkyPSIzMCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjgiLz4KICA8bGluZSB4MT0iNTUiIHkxPSI2OCIgeDI9IjgwIiB5Mj0iOTAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CjwvZz4KCjwhLS0gSSAtLT4KPHJlY3QgeD0iMTEwIiB5PSIzMCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZmZmZmZmIi8+Cgo8IS0tIDQgLS0+CjxnIGZpbGw9IiMwMGZmZmYiIGZpbHRlcj0idXJsKCNuZW9uR2xvd0ZpbHRlcikiPgogIDxyZWN0IHg9IjE1MCIgeT0iMzAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIzMCIvPgogIDxyZWN0IHg9IjE1MCIgeT0iNjciIHdpZHRoPSI0NSIgaGVpZ2h0PSIxMiIvPgogIDxyZWN0IHg9IjE4MyIgeT0iMzAiIHdpZHRoPSIxMiIgaGVpZ2h0PSI2MCIvPgo8L2c+Cgo8IS0tIFUgLS0+CjxnIGZpbGw9IiMwMGZmZmYiIGZpbHRlcj0idXJsKCNuZW9uR2xvd0ZpbHRlcikiPgogIDxyZWN0IHg9IjIyNSIgeT0iMzAiIHdpZHRoPSIxMiIgaGVpZ2h0PSI0OCIvPgogIDxyZWN0IHg9IjI1MyIgeT0iMzAiIHdpZHRoPSIxMiIgaGVpZ2h0PSI0OCIvPgogIDxyZWN0IHg9IjIyNSIgeT0iNzgiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxMiIvPgo8L2c+Cjwvc3ZnPgo=" alt="KI4U Logo groß">
     </h1>
     <p class="fade-in">Die Plattform für digitales Wachstum</p>
     <a href="#contact" class="cta-button fade-in">Jetzt Kontakt aufnehmen</a>
@@ -74,21 +78,21 @@
         <form>
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="name" required>
           </div>
           <div class="form-group">
             <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" required>
           </div>
           <div class="form-group">
             <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" />
+            <input type="tel" id="phone" name="phone">
           </div>
           <div class="form-group">
             <label for="message">Nachricht</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="cta-button" style="width:100%;">Nachricht senden</button>
+          <button type="submit" class="cta-button" style="width: 100%;">Nachricht senden</button>
         </form>
       </div>
 
@@ -117,7 +121,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-logo">
-      <span class="logo-text"><span class="ki">KI</span><span class="fouru">4U</span></span>
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZGVmcz4KICA8cmFkaWFsR3JhZGllbnQgaWQ9Im5lb25HbG93IiBjeD0iMCUiIGN5PSIwJSIgcj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBmZmZmIiBzdG9wLW9wYWNpdHk9IjAuOCIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMwMGZmZmYiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvcmFkaWFsR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0ibmVvbkdsb3dGaWx0ZXIiPgogICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iNCIgcmVzdWx0PSJjb2xvcmVkQmx1ciIvPgogICAgPGZlTWVyZ2U+CiAgICAgIDxmZU1lcmdlTm9kZSBpbj0iY29sb3JlZEJsdXIiLz4KICAgICAgPGZlTWVyZ2VOb2RlIGluPSJTb3VyY2VHcmFwaGljIi8+CiAgICA8L2ZlTWVyZ2U+CiAgPC9maWx0ZXI+CjwvZGVmcz4KCjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9InRyYW5zcGFyZW50Ii8+Cgo8IS0tIEsgLS0+CjxnIGZpbGw9IiNmZmZmZmYiPgogIDxjaXJjbGUgY3g9IjI1IiBjeT0iMjAiIHI9IjQiLz4KICA8Y2lyY2xlIGN4PSIyNSIgY3k9IjYwIiByPSI0Ii8+CiAgPGxpbmUgeDE9IjI5IiB5MT0iMjAiIHgyPSIzMCIgeTI9IjYwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxsaW5lIHgxPSIzNSIgeTE9IjM1IiB4Mj0iNTUiIHkyPSIyMCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8bGluZSB4MT0iMzUiIHkxPSI0NSIgeDI9IjU1IiB5Mj0iNjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CjwvZz4KCjwhLS0gSSAtLT4KPHJlY3QgeD0iNzUiIHk9IjIwIiB3aWR0aD0iOCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIvPgoKPCEtLSA0IC0tPgo8ZyBmaWxsPSIjMDBmZmZmIiBmaWx0ZXI9InVybCgjbmVvbkdsb3dGaWx0ZXIpIj4KICA8cmVjdCB4PSIxMDUiIHk9IjIwIiB3aWR0aD0iOCIgaGVpZ2h0PSIyMCIvPgogIDxyZWN0IHg9IjEwNSIgeT0iNDUiIHdpZHRoPSIzMCIgaGVpZ2h0PSI4Ii8+CiAgPHJlY3QgeD0iMTI3IiB5PSIyMCIgd2lkdGg9IjgiIGhlaWdodD0iNDAiLz4KPC9nPgoKPCEtLSBVIC0tPgo8ZyBmaWxsPSIjMDBmZmZmIiBmaWx0ZXI9InVybCgjbmVvbkdsb3dGaWx0ZXIpIj4KICA8cmVjdCB4PSIxNTUiIHk9IjIwIiB3aWR0aD0iOCIgaGVpZ2h0PSIzMiIvPgogIDxyZWN0IHg9IjE3NyIgeT0iMjAiIHdpZHRoPSI4IiBoZWlnaHQ9IjMyIi8+CiAgPHJlY3QgeD0iMTU1IiB5PSI1MiIgd2lkdGg9IjMwIiBoZWlnaHQ9IjgiLz4KPC9nPgo8L3N2Zz4K" alt="KI4U Logo">
     </div>
     <p>&copy; 2024 KI4U. Alle Rechte vorbehalten.</p>
     <p class="slogan">Die Plattform für digitales Wachstum</p>
