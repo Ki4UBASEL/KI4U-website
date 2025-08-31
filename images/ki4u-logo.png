@@ -1,0 +1,4 @@
+<a href="#home" class="logo" aria-label="KI4U Startseite">
+  <img src="images/ki4u-logo.png" alt="KI4U Logo" class="logo-img">
+  <span class="logo-fallback">KI<span class="neon-4u">4U</span></span>
+</a>
