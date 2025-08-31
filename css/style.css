@@ -20,14 +20,67 @@ body {
 
 /* Animated background grid */
 .bg-grid {
-  position: fixed;
-  inset: 0;
+  /* --- Motherboard Background --- */
+.bg-mobo { 
+  position: fixed; inset: 0; z-index: -1; 
+  background: #050607; /* nicht reines Schwarz, edel-dunkel */
+  overflow: hidden;
+}
+.bg-mobo svg {
+  width: 120%; height: 120%;
+  position: absolute; top: -10%; left: -10%;
+  opacity: 0.35; /* dezent */
+  transform: scale(1.1);
+  animation: pan 60s linear infinite alternate;
+}
+/* subtiler Kameraschwenk */
+@keyframes pan {
+  from { transform: scale(1.1) translate(-2%, -2%); }
+  to   { transform: scale(1.1) translate(2%, 2%); }
+}
+
+/* Leiterbahnen fließen ganz leicht */
+.trace { 
+  stroke-dasharray: 8 10; 
+  animation: flow 22s linear infinite; 
+}
+@keyframes flow { 
+  to { stroke-dashoffset: -600; } 
+}
+
+/* LEDs mit Glow + zufälligem Flicker */
+#mobo-bg .led {
+  filter: url(#glow);
+  opacity: 0.35;
+  animation: blink 6s steps(1,end) infinite;
+}
+#mobo-bg .led:nth-child(2){ animation-delay: 1.2s; }
+#mobo-bg .led:nth-child(3){ animation-delay: 2.4s; }
+#mobo-bg .led:nth-child(4){ animation-delay: 3.6s; }
+#mobo-bg .led:nth-child(5){ animation-delay: 0.9s; }
+#mobo-bg .led:nth-child(6){ animation-delay: 2.1s; }
+#mobo-bg .led:nth-child(7){ animation-delay: 4.2s; }
+
+@keyframes blink {
+  0%, 8%   { opacity: .15; }
+  9%       { opacity: .35; }
+  10%, 50% { opacity: .25; }
+  51%      { opacity: .4; }
+  52%,100% { opacity: .2; }
+}
+
+/* feine Scanlines/Noise-Overlay, sehr dezent */
+.bg-mobo::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
   background:
-    linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px);
-  background-size: 100px 100px;
-  animation: grid-move 20s linear infinite;
-  z-index: -1;
+    radial-gradient(ellipse at center, rgba(0,255,255,.06), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 1px, transparent 2px, transparent 4px);
+  mix-blend-mode: screen;
+  opacity:.08;
+  animation: flicker 9s ease-in-out infinite alternate;
+}
+@keyframes flicker { from {opacity:.06} to {opacity:.12} }
+
 }
 @keyframes grid-move {
   0% { transform: translate(0, 0); }
