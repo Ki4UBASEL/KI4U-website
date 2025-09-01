@@ -59,46 +59,31 @@
   </section>
 
   <!-- Services -->
-<section id="services" class="services">
-  <h2 class="section-title">Unsere Services</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">
-        <i data-lucide="cpu"></i>
+  <section id="services" class="services">
+    <h2 class="section-title">Unsere Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="cpu"></i></div>
+        <h3>KI & Automatisierung</h3>
+        <p>Machen Sie Ihre Prozesse effizienter und sparen Sie Kosten durch intelligente Automatisierung. Wir implementieren maßgeschneiderte KI-Lösungen für Ihr Unternehmen.</p>
       </div>
-      <h3>KI & Automatisierung</h3>
-      <p>Machen Sie Ihre Prozesse effizienter und sparen Sie Kosten durch intelligente Automatisierung. Wir implementieren maßgeschneiderte KI-Lösungen für Ihr Unternehmen.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <i data-lucide="wrench"></i>
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="wrench"></i></div>
+        <h3>IT-Support</h3>
+        <p>Lösen Sie technische Probleme schnell und zuverlässig. Unser Expertenteam steht Ihnen bei allen IT-Herausforderungen zur Seite.</p>
       </div>
-      <h3>IT-Support</h3>
-      <p>Lösen Sie technische Probleme schnell und zuverlässig. Unser Expertenteam steht Ihnen bei allen IT-Herausforderungen zur Seite.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <i data-lucide="megaphone"></i>
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="megaphone"></i></div>
+        <h3>Social Media Marketing</h3>
+        <p>Werden Sie sichtbar und gewinnen Sie neue Kunden durch strategisches Social Media Marketing. Wir helfen Ihnen dabei, online erfolgreich zu sein.</p>
       </div>
-      <h3>Social Media Marketing</h3>
-      <p>Werden Sie sichtbar und gewinnen Sie neue Kunden durch strategisches Social Media Marketing. Wir helfen Ihnen dabei, online erfolgreich zu sein.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <i data-lucide="handshake"></i>
+      <div class="service-card">
+        <div class="service-icon"><i data-lucide="handshake"></i></div>
+        <h3>Expertenvermittlung</h3>
+        <p>Profitieren Sie von unserem Netzwerk: Wir bringen Sie gezielt mit erfahrenen Expertinnen und Experten zusammen, die Ihr Unternehmen nachhaltig voranbringen.</p>
       </div>
-      <h3>Expertenvermittlung</h3>
-      <p>Profitieren Sie von unserem Netzwerk: Wir bringen Sie gezielt mit erfahrenen Expertinnen und Experten zusammen, die Ihr Unternehmen nachhaltig voranbringen.</p>
     </div>
-  </div>
-</section>
-
-<!-- Lucide Script laden -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-
+  </section>
 
   <!-- About -->
   <section id="about" class="about">
@@ -116,7 +101,19 @@
     <div class="contact-grid">
       <div class="contact-form">
         <h3 class="form-title">Nachricht senden</h3>
-        <form>
+        <form action="https://formsubmit.co/Ki4ubs@gmail.com" method="POST">
+          <!-- Anti-Spam -->
+          <input type="text" name="_honey" style="display:none">
+
+          <!-- Danke-Seite -->
+          <input type="hidden" name="_next" value="https://deine-domain.ch/danke.html">
+
+          <!-- Mail-Einstellungen -->
+          <input type="hidden" name="_subject" value="Neue Nachricht von der KI4U-Website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="Danke für deine Nachricht an KI4U! Wir melden uns so schnell wie möglich zurück.">
+          <input type="hidden" name="_captcha" value="false">
+
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -141,7 +138,7 @@
         <h3>Kontaktinformationen</h3>
         <div class="contact-item">
           <span>📧</span>
-          <div><strong>E-Mail</strong><br>KI4ubs@gmail.com</div>
+          <div><strong>E-Mail</strong><br>Ki4ubs@gmail.com</div>
         </div>
         <div class="contact-item">
           <span>📞</span>
@@ -165,8 +162,14 @@
       <span class="logo-text">KI<span>4U</span></span>
     </div>
     <p>&copy; 2024 KI4U. Alle Rechte vorbehalten.</p>
-    <p class="slogan">Henric Petri-Strasse 23, 4051 Basel – Schweiz | ✉️ KI4ubs@gmail.com | ☎️ +41 76 589 40 58</p>
+    <p class="slogan">Henric Petri-Strasse 23, 4051 Basel – Schweiz | ✉️ Ki4ubs@gmail.com | ☎️ +41 76 589 40 58</p>
   </footer>
+
+  <!-- Lucide Script für Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 
   <script src="js/script.js" defer></script>
 </body>
