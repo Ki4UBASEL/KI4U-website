@@ -8,30 +8,10 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* Logo-Schriftzug */
-    .logo-text {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2rem;
-      font-weight: 900;
-      color: white;
-      display: inline-block;
-    }
-    .logo-text span {
-      color: #00ffff; /* Neonblau */
-      text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
-    }
-
-    /* großes Hero-Logo */
-    .hero .logo-text {
-      font-size: 4rem;
-      text-align: center;
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    /* Footer Logo */
-    .footer-logo .logo-text {
-      font-size: 2rem;
-    }
+    .logo-text { font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:900; color:#fff; display:inline-block; }
+    .logo-text span { color:#00ffff; text-shadow:0 0 8px #00ffff, 0 0 16px #00ffff; }
+    .hero .logo-text { font-size:4rem; text-align:center; display:block; margin-bottom:1rem; }
+    .footer-logo .logo-text { font-size:2rem; }
   </style>
 </head>
 <body>
@@ -101,12 +81,15 @@
     <div class="contact-grid">
       <div class="contact-form">
         <h3 class="form-title">Nachricht senden</h3>
+
+        <!-- WICHTIG: FormSubmit braucht absolute _next-URL
+             Das JS unten setzt sie automatisch korrekt. -->
         <form action="https://formsubmit.co/Ki4ubs@gmail.com" method="POST">
           <!-- Anti-Spam -->
           <input type="text" name="_honey" style="display:none">
 
-          <!-- Danke-Seite -->
-          <input type="hidden" name="_next" value="https://deine-domain.ch/danke.html">
+          <!-- Danke-Seite (wird per JS absolut gesetzt) -->
+          <input type="hidden" id="nextUrl" name="_next" value="">
 
           <!-- Mail-Einstellungen -->
           <input type="hidden" name="_subject" value="Neue Nachricht von der KI4U-Website">
@@ -167,8 +150,17 @@
 
   <!-- Lucide Script für Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script> lucide.createIcons(); </script>
+
+  <!-- Setzt _next automatisch auf die richtige absolute URL -->
   <script>
-    lucide.createIcons();
+    (function () {
+      var next = document.getElementById('nextUrl');
+      // Basis-Pfad der aktuellen Seite (endet mit /)
+      var base = location.origin + location.pathname.replace(/[^/]*$/, '');
+      next.value = base + 'danke.html';
+      // Beispiel GitHub Pages: https://ki4ubasel.github.io/KI4U-website/danke.html
+    })();
   </script>
 
   <script src="js/script.js" defer></script>
