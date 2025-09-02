@@ -1,17 +1,19 @@
 :root{
-  /* Farben – neues Farbschema (Pink→Violett) */
-  --bg: #0b0b12;
+  /* Hintergrund + Text */
+  --bg: #0a0d12;
   --white: #ffffff;
-  --accent-start: #ff73e6; /* helles Pink */
-  --accent-end:   #5631d8; /* Violett */
-  --slogan: #f1a8ff;       /* dezentes Pink für den Slogan */
+
+  /* Neonblau */
+  --blue-start: #00d4ff; /* Cyan-Neon */
+  --blue-end:   #0066ff; /* Electric Blue */
+  --blue-soft:  #9ad9ff; /* helleres Blau für Slogan */
 
   /* Größen */
   --size-wordmark: 104px;  /* Arkhip für "KI4U" */
   --size-tagline:   35px;  /* Montserrat SemiBold */
 }
 
-/* Responsive Clamp */
+/* Responsive Skalierung */
 @media (max-width: 640px){
   :root{
     --size-wordmark: clamp(56px, 14vw, 88px);
@@ -25,7 +27,7 @@ body{
   margin:0;
   background: var(--bg);
   color: var(--white);
-  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
 }
 
 .stage{
@@ -38,30 +40,38 @@ body{
 }
 
 /* Marke (Icon) */
-.mark-wrap{
-  margin:0;
-  line-height:0;
-}
+.mark-wrap{ margin:0; line-height:0; }
 .mark{
   width: 140px;
   height: 140px;
-  filter: drop-shadow(0 0 18px rgba(255,115,230,.45))
-          drop-shadow(0 0 28px rgba(86,49,216,.35));
+  filter: drop-shadow(0 0 18px rgba(0,212,255,.45))
+          drop-shadow(0 0 28px rgba(0,102,255,.35));
   transition: transform .3s ease, filter .3s ease;
 }
 .mark-wrap:hover .mark{
   transform: translateY(-2px) scale(1.02);
-  filter: drop-shadow(0 0 22px rgba(255,115,230,.55))
-          drop-shadow(0 0 36px rgba(86,49,216,.45));
+  filter: drop-shadow(0 0 22px rgba(0,212,255,.6))
+          drop-shadow(0 0 36px rgba(0,102,255,.5));
 }
 
-/* Wortmarke KI4U */
+/* Wortmarke KI4U (KI weiß, 4U neon) */
 .wordmark{
   margin: 6px 0 0 0;
   font-family: "Arkhip", "Montserrat", sans-serif;
   font-size: var(--size-wordmark);
   letter-spacing: 0.02em;
   font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
+.wordmark .ki{ color: var(--white); }
+.wordmark .fouru{
+  background: linear-gradient(45deg, var(--blue-start), var(--blue-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 12px rgba(0,212,255,.35),
+    0 0 22px rgba(0,102,255,.25);
 }
 
 /* Slogan */
@@ -69,8 +79,8 @@ body{
   margin: 4px 0 0 0;
   font-size: var(--size-tagline);
   font-weight: 600;
-  color: var(--slogan);
-  letter-spacing: 0.16em;
+  color: var(--blue-soft);
+  letter-spacing: 0.12em;
 }
 
 /* Kontaktformular */
@@ -97,39 +107,60 @@ body{
 .contact-form textarea {
   margin-top: 6px;
   padding: 12px 14px;
-  border: none;
-  border-radius: 6px;
-  background: #1c1c24;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  background: #101521;
   color: var(--white);
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.2),
+    0 0 0 0 rgba(0,212,255,0);
+  transition: box-shadow .2s ease, border-color .2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: 2px solid var(--accent-start);
+  outline: none;
+  border-color: rgba(0,212,255,.6);
+  box-shadow:
+    0 0 12px rgba(0,212,255,.25),
+    0 0 24px rgba(0,102,255,.2);
 }
 
 .contact-form button {
   margin-top: 10px;
   padding: 14px;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(45deg, var(--accent-start), var(--accent-end));
+  border-radius: 10px;
+  background: linear-gradient(45deg, var(--blue-start), var(--blue-end));
   color: #fff;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Montserrat", sans-serif;
+  letter-spacing: .04em;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow .2s ease;
+  box-shadow:
+    0 6px 20px rgba(0,102,255,.25),
+    0 0 0 0 rgba(0,212,255,0);
 }
-
 .contact-form button:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  opacity: 0.95;
+  box-shadow:
+    0 10px 30px rgba(0,102,255,.35),
+    0 0 16px rgba(0,212,255,.25) inset;
+}
+
+.form-status{
+  margin:8px 0 0;
+  color:#cfe9ff;
+  font-size:14px;
 }
 
 /* Motion respektieren */
 @media (prefers-reduced-motion: reduce){
-  .mark, .mark-wrap:hover .mark{ transition: none; }
+  .mark, .mark-wrap:hover .mark,
+  .contact-form button{ transition: none; }
 }
