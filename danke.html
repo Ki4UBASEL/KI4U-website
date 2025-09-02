@@ -13,35 +13,53 @@
 </head>
 <body>
   <main class="stage">
-    <!-- Logo -->
+    <!-- Logo (Neonblau) -->
     <figure class="mark-wrap" aria-label="KI4U Logo-Marke">
       <svg class="mark" viewBox="0 0 200 200" role="img" aria-hidden="true">
-        <use href="index.html#ki4uGradient"></use>
+        <defs>
+          <linearGradient id="ki4uBlue" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"  stop-color="var(--blue-start)"/>
+            <stop offset="100%" stop-color="var(--blue-end)"/>
+          </linearGradient>
+          <filter id="softGlowBlue">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
         <path d="M100 18
                  C133 18 182 67 182 100
                  C182 133 133 182 100 182
                  C67 182 18 133 18 100
                  C18 67 67 18 100 18Z"
-              fill="url(#ki4uGradient)"/>
-        <circle cx="100" cy="100" r="20" fill="url(#ki4uGradient)" />
+              fill="url(#ki4uBlue)" filter="url(#softGlowBlue)"/>
+        <circle cx="100" cy="100" r="20" fill="url(#ki4uBlue)" />
       </svg>
     </figure>
 
-    <h1 class="wordmark">KI4U</h1>
+    <!-- Wortmarke -->
+    <h1 class="wordmark">
+      <span class="ki">KI</span><span class="fouru">4U</span>
+    </h1>
+
+    <!-- Danke-Text -->
     <p class="tagline">Danke für Ihre Nachricht</p>
-    <p style="margin-top:20px;font-size:18px;color:#ccc;">
+    <p style="margin-top:20px;font-size:18px;color:#cfe9ff;">
       Wir melden uns so schnell wie möglich bei Ihnen.
     </p>
 
+    <!-- Button zurück -->
     <a href="index.html" style="
       margin-top:40px;
       display:inline-block;
       padding:12px 28px;
-      background:linear-gradient(45deg,var(--accent-start),var(--accent-end));
+      background:linear-gradient(45deg,var(--blue-start),var(--blue-end));
       color:#fff;
       text-decoration:none;
-      border-radius:8px;
-      font-weight:600;
+      border-radius:10px;
+      font-weight:700;
       font-family:'Montserrat',sans-serif;">
       Zurück zur Startseite
     </a>
