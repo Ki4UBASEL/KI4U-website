@@ -13,42 +13,26 @@
 </head>
 <body>
   <main class="stage">
-    <!-- Logo wie auf index.html -->
+    <!-- Logo -->
     <figure class="mark-wrap" aria-label="KI4U Logo-Marke">
       <svg class="mark" viewBox="0 0 200 200" role="img" aria-hidden="true">
-        <defs>
-          <linearGradient id="ki4uGradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%"  stop-color="var(--accent-start)"/>
-            <stop offset="100%" stop-color="var(--accent-end)"/>
-          </linearGradient>
-          <filter id="softGlow">
-            <feGaussianBlur stdDeviation="6" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
+        <use href="index.html#ki4uGradient"></use>
         <path d="M100 18
                  C133 18 182 67 182 100
                  C182 133 133 182 100 182
                  C67 182 18 133 18 100
                  C18 67 67 18 100 18Z"
-              fill="url(#ki4uGradient)" filter="url(#softGlow)"/>
+              fill="url(#ki4uGradient)"/>
         <circle cx="100" cy="100" r="20" fill="url(#ki4uGradient)" />
       </svg>
     </figure>
 
-    <!-- Wortmarke -->
     <h1 class="wordmark">KI4U</h1>
-
-    <!-- Danke-Text -->
     <p class="tagline">Danke für Ihre Nachricht</p>
     <p style="margin-top:20px;font-size:18px;color:#ccc;">
       Wir melden uns so schnell wie möglich bei Ihnen.
     </p>
 
-    <!-- Button zurück -->
     <a href="index.html" style="
       margin-top:40px;
       display:inline-block;
@@ -58,8 +42,7 @@
       text-decoration:none;
       border-radius:8px;
       font-weight:600;
-      font-family:'Montserrat',sans-serif;
-      letter-spacing:0.05em;">
+      font-family:'Montserrat',sans-serif;">
       Zurück zur Startseite
     </a>
   </main>
