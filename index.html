@@ -13,9 +13,8 @@
 </head>
 <body>
   <main class="stage">
-    <!-- Logo-Marke (SVG, Gradient + Glow) -->
+    <!-- Logo-Marke -->
     <figure class="mark-wrap" aria-label="KI4U Logo-Marke">
-      <!-- Du kannst dieses SVG auch durch deine PNG/SVG-Datei ersetzen -->
       <svg class="mark" viewBox="0 0 200 200" role="img" aria-hidden="true">
         <defs>
           <linearGradient id="ki4uGradient" x1="0" y1="0" x2="1" y2="1">
@@ -30,7 +29,6 @@
             </feMerge>
           </filter>
         </defs>
-        <!-- einfache, weiche Diamant-Form + Punkt (ästhetisch nah am Screenshot) -->
         <path d="M100 18
                  C133 18 182 67 182 100
                  C182 133 133 182 100 182
@@ -42,10 +40,27 @@
     </figure>
 
     <!-- Wortmarke -->
-    <h1 class="wordmark" aria-label="KI4U">KI4U</h1>
+    <h1 class="wordmark">KI4U</h1>
 
     <!-- Slogan -->
     <p class="tagline">Automatisch sparen</p>
+
+    <!-- Kontaktformular -->
+    <form action="danke.html" method="get" class="contact-form">
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        <span>E-Mail</span>
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        <span>Nachricht</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit">Nachricht senden</button>
+    </form>
   </main>
 
   <script src="script.js"></script>
