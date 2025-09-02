@@ -1,5 +1,4 @@
-/* Kleine Helfer: per Tastendruck "G" Glow an/aus, falls du mal
-   eine statische Version brauchst (z.B. für Druckexport). */
+/* Glow an/aus per Taste "G" */
 (function(){
   const mark = document.querySelector('.mark');
   let glowOn = true;
