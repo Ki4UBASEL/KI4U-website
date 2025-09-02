@@ -1,68 +1,27 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Danke – KI4U</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.cdnfonts.com/css/arkhip" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;background:#0b0f14;color:#eaf2ff;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:720px;margin:0 auto;padding:40px 26px;text-align:center}
+    h1{font-size:34px;margin:0 0 8px}
+    p{color:#9fb3c8}
+    img{height:90px;margin-bottom:10px;filter:drop-shadow(0 0 18px rgba(0,183,255,.45))}
+    a.btn{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:10px;background:linear-gradient(180deg,#07c0ff,#009be0);box-shadow:0 0 18px rgba(0,183,255,.6),0 0 42px rgba(0,183,255,.35);color:#00131d;font-weight:700;text-decoration:none}
+  </style>
 </head>
 <body>
-  <main class="stage">
-    <!-- Logo (Neonblau) -->
-    <figure class="mark-wrap" aria-label="KI4U Logo-Marke">
-      <svg class="mark" viewBox="0 0 200 200" role="img" aria-hidden="true">
-        <defs>
-          <linearGradient id="ki4uBlue" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%"  stop-color="var(--blue-start)"/>
-            <stop offset="100%" stop-color="var(--blue-end)"/>
-          </linearGradient>
-          <filter id="softGlowBlue">
-            <feGaussianBlur stdDeviation="6" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-        <path d="M100 18
-                 C133 18 182 67 182 100
-                 C182 133 133 182 100 182
-                 C67 182 18 133 18 100
-                 C18 67 67 18 100 18Z"
-              fill="url(#ki4uBlue)" filter="url(#softGlowBlue)"/>
-        <circle cx="100" cy="100" r="20" fill="url(#ki4uBlue)" />
-      </svg>
-    </figure>
-
-    <!-- Wortmarke -->
-    <h1 class="wordmark">
-      <span class="ki">KI</span><span class="fouru">4U</span>
-    </h1>
-
-    <!-- Danke-Text -->
-    <p class="tagline">Danke für Ihre Nachricht</p>
-    <p style="margin-top:20px;font-size:18px;color:#cfe9ff;">
-      Wir melden uns so schnell wie möglich bei Ihnen.
-    </p>
-
-    <!-- Button zurück -->
-    <a href="index.html" style="
-      margin-top:40px;
-      display:inline-block;
-      padding:12px 28px;
-      background:linear-gradient(45deg,var(--blue-start),var(--blue-end));
-      color:#fff;
-      text-decoration:none;
-      border-radius:10px;
-      font-weight:700;
-      font-family:'Montserrat',sans-serif;">
-      Zurück zur Startseite
-    </a>
-  </main>
+  <div class="wrap">
+    <img src="logo.png" alt="KI4U Logo">
+    <h1>Vielen Dank für Ihre Nachricht!</h1>
+    <p>Wir melden uns werktags innerhalb von 24&nbsp;Stunden.<br>
+       Falls Sie etwas ergänzen möchten: <a href="mailto:Ki4ubs@gmail.com">Ki4ubs@gmail.com</a></p>
+    <a class="btn" href="./index.html">Zurück zur Startseite</a>
+  </div>
 </body>
 </html>
