@@ -13,15 +13,15 @@
 </head>
 <body>
   <main class="stage">
-    <!-- Logo-Marke -->
+    <!-- Neonblau-Logo-Marke -->
     <figure class="mark-wrap" aria-label="KI4U Logo-Marke">
       <svg class="mark" viewBox="0 0 200 200" role="img" aria-hidden="true">
         <defs>
-          <linearGradient id="ki4uGradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%"  stop-color="var(--accent-start)"/>
-            <stop offset="100%" stop-color="var(--accent-end)"/>
+          <linearGradient id="ki4uBlue" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"  stop-color="var(--blue-start)"/>
+            <stop offset="100%" stop-color="var(--blue-end)"/>
           </linearGradient>
-          <filter id="softGlow">
+          <filter id="softGlowBlue">
             <feGaussianBlur stdDeviation="6" result="blur"/>
             <feMerge>
               <feMergeNode in="blur"/>
@@ -29,24 +29,27 @@
             </feMerge>
           </filter>
         </defs>
+        <!-- weiche Rautenform -->
         <path d="M100 18
                  C133 18 182 67 182 100
                  C182 133 133 182 100 182
                  C67 182 18 133 18 100
                  C18 67 67 18 100 18Z"
-              fill="url(#ki4uGradient)" filter="url(#softGlow)"/>
-        <circle cx="100" cy="100" r="20" fill="url(#ki4uGradient)" />
+              fill="url(#ki4uBlue)" filter="url(#softGlowBlue)"/>
+        <circle cx="100" cy="100" r="20" fill="url(#ki4uBlue)" />
       </svg>
     </figure>
 
-    <!-- Wortmarke -->
-    <h1 class="wordmark">KI4U</h1>
+    <!-- Wortmarke: KI weiß, 4U neonblau -->
+    <h1 class="wordmark" aria-label="KI4U">
+      <span class="ki">KI</span><span class="fouru">4U</span>
+    </h1>
 
     <!-- Slogan -->
     <p class="tagline">Automatisch sparen</p>
 
-    <!-- Kontaktformular -->
-    <form action="danke.html" method="get" class="contact-form">
+    <!-- Kontaktformular (Formspree-URL einsetzen) -->
+    <form id="contactForm" action="https://formspree.io/f/DEINE_ID" method="POST" class="contact-form" autocomplete="on" novalidate>
       <label>
         <span>Name</span>
         <input type="text" name="name" required>
@@ -59,7 +62,9 @@
         <span>Nachricht</span>
         <textarea name="message" rows="5" required></textarea>
       </label>
+      <input type="hidden" name="form_name" value="KI4U Kontakt">
       <button type="submit">Nachricht senden</button>
+      <p id="formStatus" class="form-status" style="display:none;">Sende …</p>
     </form>
   </main>
 
