@@ -1,168 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KI4U - Die Plattform für digitales Wachstum</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Logo-Schriftzug */
-    .logo-text { font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:900; color:#fff; display:inline-block; }
-    .logo-text span { color:#00ffff; text-shadow:0 0 8px #00ffff, 0 0 16px #00ffff; }
-    .hero .logo-text { font-size:4rem; text-align:center; display:block; margin-bottom:1rem; }
-    .footer-logo .logo-text { font-size:2rem; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KI4U – Automatisch sparen</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.cdnfonts.com/css/arkhip" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- animierter Hintergrund -->
-  <div class="bg-grid" aria-hidden="true"></div>
+  <main class="stage">
+    <!-- Logo-Marke (SVG, Gradient + Glow) -->
+    <figure class="mark-wrap" aria-label="KI4U Logo-Marke">
+      <!-- Du kannst dieses SVG auch durch deine PNG/SVG-Datei ersetzen -->
+      <svg class="mark" viewBox="0 0 200 200" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="ki4uGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"  stop-color="var(--accent-start)"/>
+            <stop offset="100%" stop-color="var(--accent-end)"/>
+          </linearGradient>
+          <filter id="softGlow">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- einfache, weiche Diamant-Form + Punkt (ästhetisch nah am Screenshot) -->
+        <path d="M100 18
+                 C133 18 182 67 182 100
+                 C182 133 133 182 100 182
+                 C67 182 18 133 18 100
+                 C18 67 67 18 100 18Z"
+              fill="url(#ki4uGradient)" filter="url(#softGlow)"/>
+        <circle cx="100" cy="100" r="20" fill="url(#ki4uGradient)" />
+      </svg>
+    </figure>
 
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="#home" class="logo-text" aria-label="KI4U Startseite">KI<span>4U</span></a>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">Über uns</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Wortmarke -->
+    <h1 class="wordmark" aria-label="KI4U">KI4U</h1>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <h1 class="fade-in logo-text">KI<span>4U</span></h1>
-    <p class="fade-in">Die Plattform für digitales Wachstum</p>
-    <a href="#contact" class="cta-button fade-in">Jetzt Kontakt aufnehmen</a>
-  </section>
+    <!-- Slogan -->
+    <p class="tagline">Automatisch sparen</p>
+  </main>
 
-  <!-- Services -->
-  <section id="services" class="services">
-    <h2 class="section-title">Unsere Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon"><i data-lucide="cpu"></i></div>
-        <h3>KI & Automatisierung</h3>
-        <p>Machen Sie Ihre Prozesse effizienter und sparen Sie Kosten durch intelligente Automatisierung. Wir implementieren maßgeschneiderte KI-Lösungen für Ihr Unternehmen.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><i data-lucide="wrench"></i></div>
-        <h3>IT-Support</h3>
-        <p>Lösen Sie technische Probleme schnell und zuverlässig. Unser Expertenteam steht Ihnen bei allen IT-Herausforderungen zur Seite.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><i data-lucide="megaphone"></i></div>
-        <h3>Social Media Marketing</h3>
-        <p>Werden Sie sichtbar und gewinnen Sie neue Kunden durch strategisches Social Media Marketing. Wir helfen Ihnen dabei, online erfolgreich zu sein.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><i data-lucide="handshake"></i></div>
-        <h3>Expertenvermittlung</h3>
-        <p>Profitieren Sie von unserem Netzwerk: Wir bringen Sie gezielt mit erfahrenen Expertinnen und Experten zusammen, die Ihr Unternehmen nachhaltig voranbringen.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="about-content">
-      <h2>Über uns</h2>
-      <p>Wir helfen Start-ups und jungen Unternehmen dabei, digital zu wachsen – durch innovative KI-Lösungen, zuverlässigen IT-Support und effektives Marketing.</p>
-      <p>Unser Team aus Experten in Basel versteht die Bedürfnisse moderner Unternehmen und bietet maßgeschneiderte Lösungen, die Ihr Geschäft voranbringen.</p>
-      <p>Mit KI4U erhalten Sie nicht nur technische Unterstützung, sondern einen Partner für Ihren digitalen Erfolg.</p>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2 class="section-title">Kontakt</h2>
-    <div class="contact-grid">
-      <div class="contact-form">
-        <h3 class="form-title">Nachricht senden</h3>
-
-        <!-- WICHTIG: FormSubmit braucht absolute _next-URL
-             Das JS unten setzt sie automatisch korrekt. -->
-        <form action="https://formsubmit.co/Ki4ubs@gmail.com" method="POST">
-          <!-- Anti-Spam -->
-          <input type="text" name="_honey" style="display:none">
-
-          <!-- Danke-Seite (wird per JS absolut gesetzt) -->
-          <input type="hidden" id="nextUrl" name="_next" value="">
-
-          <!-- Mail-Einstellungen -->
-          <input type="hidden" name="_subject" value="Neue Nachricht von der KI4U-Website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_autoresponse" value="Danke für deine Nachricht an KI4U! Wir melden uns so schnell wie möglich zurück.">
-          <input type="hidden" name="_captcha" value="false">
-
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-          <div class="form-group">
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="cta-button" style="width: 100%;">Nachricht senden</button>
-        </form>
-      </div>
-
-      <div class="contact-info">
-        <h3>Kontaktinformationen</h3>
-        <div class="contact-item">
-          <span>📧</span>
-          <div><strong>E-Mail</strong><br>Ki4ubs@gmail.com</div>
-        </div>
-        <div class="contact-item">
-          <span>📞</span>
-          <div><strong>Telefon</strong><br>+41 76 589 40 58</div>
-        </div>
-        <div class="contact-item">
-          <span>📍</span>
-          <div><strong>Adresse</strong><br>Henric Petri-Strasse 23, 4051 Basel</div>
-        </div>
-        <div class="contact-item">
-          <span>⏰</span>
-          <div><strong>Öffnungszeiten</strong><br>Mo–Fr: 08:00 – 18:00 Uhr</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-logo">
-      <span class="logo-text">KI<span>4U</span></span>
-    </div>
-    <p>&copy; 2024 KI4U. Alle Rechte vorbehalten.</p>
-    <p class="slogan">Henric Petri-Strasse 23, 4051 Basel – Schweiz | ✉️ Ki4ubs@gmail.com | ☎️ +41 76 589 40 58</p>
-  </footer>
-
-  <!-- Lucide Script für Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script> lucide.createIcons(); </script>
-
-  <!-- Setzt _next automatisch auf die richtige absolute URL -->
-  <script>
-    (function () {
-      var next = document.getElementById('nextUrl');
-      // Basis-Pfad der aktuellen Seite (endet mit /)
-      var base = location.origin + location.pathname.replace(/[^/]*$/, '');
-      next.value = base + 'danke.html';
-      // Beispiel GitHub Pages: https://ki4ubasel.github.io/KI4U-website/danke.html
-    })();
-  </script>
-
-  <script src="js/script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
