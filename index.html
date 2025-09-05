@@ -20,7 +20,7 @@
     .container{width:min(var(--maxw),92vw);margin-inline:auto}
     section{padding:56px 0}
 
-    /* ===== Header ===== */
+    /* ===== Header / Responsive Nav ===== */
     header{
       position:sticky; top:0; z-index:50;
       background:linear-gradient(180deg, rgba(15,22,32,.95), rgba(15,22,32,.9));
@@ -28,20 +28,30 @@
     }
     .navbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    /* Text-Logo (Header) */
     .logo-text{
       font-family: Orbitron, system-ui, sans-serif;
-      font-weight:900; letter-spacing:.5px; color:#fff; line-height:1;
+      font-weight: 900; letter-spacing:.5px; color:#fff; line-height:1;
       font-size:1.6rem; display:inline-block; user-select:none;
       filter: drop-shadow(0 0 6px rgba(0,255,255,.25));
     }
     .logo-text span{ color:#00ffff; text-shadow:0 0 10px rgba(0,255,255,.9), 0 0 18px rgba(0,255,255,.6) }
-    .nav-toggle{display:none; background:transparent; border:1px solid #1b2a3d; color:var(--text); border-radius:10px; padding:8px 10px; cursor:pointer;}
+
+    .nav-toggle{
+      display:none; background:transparent; border:1px solid #1b2a3d; color:var(--text);
+      border-radius:10px; padding:8px 10px; cursor:pointer;
+    }
+    .nav-toggle:focus{outline:none; box-shadow:0 0 0 4px var(--ring); border-color:var(--accent)}
     .nav-links{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
     .nav-links a{color:var(--text); text-decoration:none; padding:8px 10px; border-radius:10px; opacity:.92; display:block}
     .nav-links a:hover{ background:#0e1b27; opacity:1 }
-    @media(max-width:820px){
+    @media (max-width: 820px){
       .nav-toggle{display:block}
-      .nav-links{display:none; flex-direction:column; background:var(--panel); border:1px solid #132436; border-radius:12px; padding:10px; margin-top:10px; width:100%;}
+      .nav-links{
+        display:none; flex-direction:column; align-items:flex-start; gap:8px;
+        background:var(--panel); border:1px solid #132436; border-radius:12px;
+        padding:10px; margin-top:10px; width:100%;
+      }
       .nav-links.open{display:block}
     }
 
@@ -50,25 +60,32 @@
     .hero-logo-text{
       font-family: Orbitron, system-ui, sans-serif;
       font-weight:900; letter-spacing:1px; color:#fff;
-      font-size:clamp(2.4rem,6vw,4rem); margin:0 auto 12px; display:inline-block;
-      filter:drop-shadow(0 0 14px rgba(0,255,255,.35)); user-select:none;
+      font-size:clamp(2.4rem, 6vw, 4rem); margin:0 auto 12px; display:inline-block;
+      filter: drop-shadow(0 0 14px rgba(0,255,255,.35)); user-select:none;
     }
     .hero-logo-text span{ color:#00ffff; text-shadow:0 0 14px rgba(0,255,255,1), 0 0 26px rgba(0,255,255,.8) }
-    .cta-button{background:var(--accent); color:#001018; border:none; border-radius:12px; padding:12px 18px; font-weight:600; box-shadow:0 0 16px #00ffff66; cursor:pointer}
-    .cta-button:hover{box-shadow:0 0 22px #00ffff99; transform:translateY(-1px)}
+    .cta-button{
+      background:var(--accent); color:#001018; border:none; border-radius:12px;
+      padding:12px 18px; font-weight:600; box-shadow:0 0 16px #00ffff66; cursor:pointer
+    }
+    .cta-button:hover{ box-shadow:0 0 22px #00ffff99; transform:translateY(-1px) }
 
-    /* Hintergrund */
-    .bg-grid{position:fixed; inset:0; z-index:-1; pointer-events:none;
-      background:radial-gradient(circle at 50% -10%, rgba(0,255,255,.08), transparent 55%),
-      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
-      linear-gradient(0deg, rgba(255,255,255,.03) 1px, transparent 1px);
-      background-size:100% 100%,40px 40px,40px 40px;}
+    /* Hintergrundgitter */
+    .bg-grid{
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(0,255,255,.08), transparent 55%),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size:100% 100%, 40px 40px, 40px 40px;
+    }
 
     /* ===== Services ===== */
     .section-title{text-align:center;margin:0 0 18px}
     .services-grid{display:grid;gap:16px;grid-template-columns:1fr}
     @media(min-width:900px){.services-grid{grid-template-columns:repeat(4,1fr)}}
     .service-card{background:var(--panel);border:1px solid #132436;border-radius:16px;padding:18px}
+    .service-icon i{width:28px;height:28px;vertical-align:middle}
     .service-card h3{margin:6px 0 8px}
 
     /* ===== About ===== */
@@ -77,52 +94,122 @@
     /* ===== ROI ===== */
     .roi-grid{display:grid;gap:20px;grid-template-columns:1fr;max-width:var(--maxw);margin:0 auto}
     @media(min-width:960px){.roi-grid{grid-template-columns:420px 1fr}}
-    .roi-form{background:var(--panel);border:1px solid #122131;border-radius:16px;padding:20px}
+    .roi-form{background:var(--panel);border:1px solid #122131;border-radius:16px;padding:20px;box-shadow:0 0 24px #000 inset}
     .roi-form .field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+    .roi-form label{font-size:.95rem;color:var(--muted)}
+    .roi-form input{background:var(--panel-2);color:var(--text);border:1px solid #1b2a3d;border-radius:12px;padding:12px}
+    .roi-form input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--ring)}
+    .roi-form .hint{color:var(--muted);font-size:.9rem;margin-top:8px}
     .roi-results{display:grid;gap:16px}
     @media(min-width:680px){.roi-results{grid-template-columns:repeat(3,1fr)}}
     .card{background:var(--panel);border:1px solid #16263a;border-radius:16px;padding:18px}
-    .card .accent{color:var(--accent)}
+    .card h3{margin:0 0 10px}
+    .card .accent{color:var(--accent);text-shadow:0 0 8px #00ffff88}
+    .figures{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .figures li{display:flex;justify-content:space-between;align-items:center;background:var(--panel-2);padding:10px 12px;border-radius:12px;border:1px solid #1a2a3e}
+    .figures strong{font-variant-numeric:tabular-nums}
+    .total{margin-top:10px;display:flex;justify-content:space-between;padding:12px;border-radius:12px;background:#0e1b27;border:1px solid #1a2a3e}
+    .total.big{font-size:1.1rem;border:1px solid #214c43}
+    .card-savings .figures strong,.card-savings .total strong{color:var(--green)}
+    .card-costs .figures strong,.card-costs .total strong{color:var(--red)}
+    .card-net .figures strong{color:#ddd}
+    .card-net .total.big strong.positive{color:var(--green)}
+    .card-net .total.big strong.negative{color:var(--red)}
+    .card-net .foot{color:var(--muted);font-size:.85rem;margin:8px 4px 0}
 
-    /* ===== Pricing ===== */
+    /* ===== Pricing (einheitlich) ===== */
     .pricing-grid{display:grid;gap:22px;grid-template-columns:1fr}
     @media(min-width:1000px){.pricing-grid{grid-template-columns:repeat(4,1fr)}}
-    .plan{background:var(--panel);border:1px solid #173145;border-radius:20px;padding:22px;position:relative;display:flex;flex-direction:column;gap:14px}
-    .plan.highlight{box-shadow:0 0 0 2px #00ffff3d,0 16px 40px rgba(0,0,0,.35)}
-    .badge{position:absolute;top:14px;right:14px;font-size:.78rem;background:#012a2a;color:var(--accent);padding:4px 10px;border-radius:999px}
-    .plan-head h3{margin:0 0 6px;font-size:1.05rem}
-    .price{font-size:2.1rem;font-weight:800}
-    .price span{font-size:.95rem;color:var(--muted);margin-left:6px}
-    .feat{list-style:none;padding:0;margin:4px 0 6px;display:flex;flex-direction:column;gap:10px}
-    .feat li{background:var(--panel-2);border:1px solid #1a2a3e;border-radius:14px;padding:12px 12px;font-size:.98rem}
+
+    .plan{
+      background:var(--panel);
+      border:1px solid #173145;
+      border-radius:20px;
+      padding:22px;
+      position:relative;
+      display:flex;flex-direction:column;gap:14px;
+      box-shadow:0 12px 30px rgba(0,0,0,.25) inset;
+    }
+    .plan.highlight{ box-shadow:0 0 0 2px #00ffff3d,0 16px 40px rgba(0,0,0,.35); border-color:#1e3a4b }
+    .plan.enterprise{ border-color:#1e3a4b }
+
+    .badge{
+      position:absolute;top:14px;right:14px;
+      font-size:.78rem;letter-spacing:.2px;
+      background:#012a2a;border:1px solid #1e7171;color:var(--accent);
+      padding:4px 10px;border-radius:999px;
+      box-shadow:0 0 10px #00ffff55 inset;
+    }
+
+    .plan-head h3{ margin:0 0 6px 0; font-size:1.05rem; letter-spacing:.2px; color:#e8f0fe; opacity:.95 }
+    .price{ font-size:2.1rem; font-weight:800; letter-spacing:.3px }
+    .price span{ font-size:.95rem; color:var(--muted); margin-left:6px }
+
+    .feat{ list-style:none; padding:0; margin:4px 0 6px; display:flex; flex-direction:column; gap:10px }
+    .feat li{
+      display:flex; justify-content:space-between; align-items:center;
+      background:var(--panel-2); border:1px solid #1a2a3e; border-radius:14px;
+      padding:12px 12px; font-size:.98rem;
+    }
+    .feat li em{font-style:normal;color:var(--muted);font-size:.9rem;margin-left:8px}
+    .feat li.yes{color:#dfe9ff}
+    .feat li.no{color:#8b97ab;opacity:.6}
+    .feat li.up{border-color:#214c43;box-shadow:inset 0 0 0 1px #214c43}
     .feat li.up strong{color:var(--green)}
-    .btn-order{width:100%;padding:12px 14px;border-radius:12px;background:#0a0f14;color:#fff;border:2px solid var(--accent);font-weight:800;cursor:pointer;text-align:center;transition:.18s}
-    .btn-order:hover{box-shadow:0 0 18px #00ffffaa;transform:translateY(-1px)}
+    .feat li.up::before{ content:"＋"; color:var(--green); margin-right:8px; font-weight:800 }
+
+    /* Einheitliche Bestell-Buttons */
+    .btn-order{
+      width:100%; padding:12px 14px; border-radius:12px;
+      background:#0a0f14; color:#ffffff; border:2px solid var(--accent);
+      font-weight:800; letter-spacing:.2px; cursor:pointer; text-align:center;
+      box-shadow:none; transition:.18s ease; margin-top:6px;
+    }
+    .btn-order:hover{ box-shadow:0 0 18px #00ffffaa; transform:translateY(-1px) }
+    .btn-order:focus{ outline:none; box-shadow:0 0 0 4px var(--ring), 0 0 18px #00ffffaa }
+
+    /* Karten ausgleichen */
     .plan .spacer{flex:1}
+    .small-note{color:var(--muted);font-size:.85rem;margin-top:6px}
 
     /* ===== Kontakt ===== */
     .contact-grid{display:grid;gap:20px;grid-template-columns:1fr}
     @media(min-width:960px){.contact-grid{grid-template-columns:480px 1fr}}
     .contact-form,.contact-info{background:var(--panel);border:1px solid #132436;border-radius:16px;padding:20px}
+    .form-group{display:flex;flex-direction:column;margin-bottom:12px}
+    .form-group input,.form-group textarea{background:var(--panel-2);color:var(--text);border:1px solid #1b2a3d;border-radius:12px;padding:12px}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--ring)}
 
     /* ===== Footer ===== */
-    footer{padding:28px 0;border-top:1px solid #132436;background:rgba(15,22,32,.9)}
-    footer p{text-align:center}
+    footer{padding:28px 0;border-top:1px solid #132436;background:linear-gradient(180deg, rgba(15,22,32,.9), rgba(15,22,32,.9))}
+    footer p{margin:8px 0;text-align:center}
     .footer-logo{text-align:center;margin-bottom:6px}
-    .corner-logo-text{position:fixed;right:16px;bottom:16px;font-family:Orbitron;font-weight:900;color:#fff;font-size:1.2rem}
-    .corner-logo-text span{color:#00ffff}
+
+    /* ===== Corner-Logo unten rechts (Text) ===== */
+    .corner-logo-text{
+      position: fixed; right: 16px; bottom: 16px; z-index: 60;
+      font-family: Orbitron, system-ui, sans-serif; font-weight: 900; line-height:1;
+      color:#fff; font-size: 1.2rem; user-select:none;
+      filter: drop-shadow(0 0 6px rgba(0,255,255,.35)); opacity:.95;
+    }
+    .corner-logo-text span{ color:#00ffff; text-shadow: 0 0 10px rgba(0,255,255,.9), 0 0 18px rgba(0,255,255,.6) }
+
+    /* ===== Icons ===== */
+    .service-icon i{stroke:currentColor}
   </style>
 </head>
 
 <body>
-  <div class="bg-grid"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
 
   <!-- Header -->
   <header>
     <div class="container">
       <div class="navbar">
-        <a class="brand" href="#home"><div class="logo-text">KI<span>4U</span></div></a>
-        <button class="nav-toggle" id="navToggle">☰ Menü</button>
+        <a class="brand" href="#home" aria-label="KI4U Startseite">
+          <div class="logo-text" aria-hidden="true">KI<span>4U</span></div>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" id="navToggle">☰ Menü</button>
         <ul class="nav-links" id="primary-nav">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Leistungen</a></li>
@@ -138,7 +225,7 @@
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="container">
-      <div class="hero-logo-text">KI<span>4U</span></div>
+      <div class="hero-logo-text" role="img" aria-label="KI4U Logo groß">KI<span>4U</span></div>
       <p>Die Plattform für digitales Wachstum</p>
       <a href="#contact" class="cta-button">Jetzt Kontakt aufnehmen</a>
     </div>
@@ -149,19 +236,38 @@
     <div class="container">
       <h2 class="section-title">Unsere Leistungen</h2>
       <div class="services-grid">
-        <div class="service-card"><h3>Prozess-Automatisierung</h3><p>Wiederkehrende Arbeit wird zuverlässig automatisiert.</p></div>
-        <div class="service-card"><h3>IT-Support</h3><p>Schnelle Hilfe remote oder vor Ort.</p></div>
-        <div class="service-card"><h3>Digitales Marketing</h3><p>Planbare Sichtbarkeit: Content, Kampagnen und Reporting.</p></div>
-        <div class="service-card"><h3>Experten-Vermittlung</h3><p>Wir bringen Sie mit Spezialist:innen zusammen.</p></div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="workflow"></i></div>
+          <h3>Prozess-Automatisierung</h3>
+          <p>Wiederkehrende Arbeit wird zuverlässig automatisiert. Unser Entwickler-Team baut stabile Abläufe, die Zeit sparen und Fehler vermeiden.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="wrench"></i></div>
+          <h3>IT-Support</h3>
+          <p>Schnelle Hilfe remote oder vor Ort. Wir kümmern uns um Systeme, Sicherheit und Updates – pragmatisch und lösungsorientiert.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="megaphone"></i></div>
+          <h3>Digitales Marketing</h3>
+          <p>Planbare Sichtbarkeit: Content, Kampagnen und Reporting – umgesetzt vom Team, nicht „magisch“ von Tools.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="handshake"></i></div>
+          <h3>Experten-Vermittlung</h3>
+          <p>Wir bringen Sie mit geprüften Spezialist:innen zusammen und begleiten die Umsetzung – technisch und organisatorisch.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" class="about">
     <div class="container">
-      <h2 class="section-title">Über uns</h2>
-      <p>Wir sind ein Entwickler- und IT-Team aus Basel.</p>
+      <div class="about-content">
+        <h2 class="section-title">Über uns</h2>
+        <p>Wir sind ein Entwickler- und IT-Team aus Basel. Wir planen, bauen und betreiben individuelle Software- und Automatisierungslösungen – alles aus einer Hand.</p>
+        <p>Kein Tool-Bingo, kein Buzzword-Bingo: Wir liefern robuste Lösungen, dokumentiert, messbar und langfristig betreut.</p>
+      </div>
     </div>
   </section>
 
@@ -169,7 +275,54 @@
   <section id="roi">
     <div class="container">
       <h2 class="section-title">ROI-Rechner</h2>
-      <!-- ROI Rechner Inhalt -->
+
+      <div class="roi-grid">
+        <!-- Eingaben -->
+        <form class="roi-form" id="roiForm">
+          <div class="field"><label>Aktuelle Arbeitszeit/Monat (Std)</label><input type="number" id="hours" value="40" min="0" step="1" required></div>
+          <div class="field"><label>Stundensatz (CHF)</label><input type="number" id="hourly" value="80" min="0" step="1" required></div>
+          <div class="field"><label>Fehler-/Nacharbeitskosten/Monat (CHF)</label><input type="number" id="errorCosts" value="300" min="0" step="1" required></div>
+          <div class="field"><label>Leads/Monat</label><input type="number" id="leads" value="20" min="0" step="1" required></div>
+          <div class="field"><label>Wert pro Lead (CHF)</label><input type="number" id="leadValue" value="50" min="0" step="1" required></div>
+          <div class="field"><label>Effizienzgewinn (%)</label><input type="number" id="effGain" value="50" min="0" max="100" step="1" required></div>
+          <div class="field"><label>Fehlerreduktion (%)</label><input type="number" id="errRed" value="60" min="0" max="100" step="1" required></div>
+          <div class="field"><label>Lead-Uplift (%)</label><input type="number" id="leadUp" value="20" min="0" max="300" step="1" required></div>
+          <div class="field"><label>Setup (einmalig, CHF)</label><input type="number" id="setup" value="690" min="0" step="1" required></div>
+          <div class="field"><label>Monatliche Kosten (CHF)</label><input type="number" id="monthly" value="190" min="0" step="1" required></div>
+          <button type="button" class="cta-button" id="calcBtn">Berechnen</button>
+          <p class="hint">Tipp: Starte konservativ – später skalieren wir.</p>
+        </form>
+
+        <!-- Ergebnisse -->
+        <div class="roi-results" id="roiResults" aria-live="polite">
+          <div class="card card-savings">
+            <h3>Monatliche <span class="accent">Ersparnisse</span></h3>
+            <ul class="figures">
+              <li><span>Gesparte Arbeitszeit</span><strong id="saveLabor">CHF 0</strong></li>
+              <li><span>Weniger Fehler</span><strong id="saveErrors">CHF 0</strong></li>
+              <li><span>Zusatz-Umsatz</span><strong id="extraRev">CHF 0</strong></li>
+            </ul>
+            <div class="total"><span>Total Ersparnisse</span><strong id="grossBenefit">CHF 0</strong></div>
+          </div>
+          <div class="card card-costs">
+            <h3>Tatsächliche <span class="accent">Kosten</span></h3>
+            <ul class="figures">
+              <li><span>Monatliche Kosten</span><strong id="mCosts">CHF 0</strong></li>
+              <li><span>Setup (einmalig)</span><strong id="sCosts">CHF 0</strong></li>
+            </ul>
+            <div class="total"><span>Kosten/Monat</span><strong id="monthlyCosts">CHF 0</strong></div>
+          </div>
+          <div class="card card-net">
+            <h3><span class="accent">Netto</span> &amp; Payback</h3>
+            <ul class="figures">
+              <li><span>Netto/Monat</span><strong id="netMonthly">CHF 0</strong></li>
+              <li><span>Payback (Monate)</span><strong id="payback">–</strong></li>
+            </ul>
+            <div class="total big"><span>Netto/Jahr</span><strong id="netAnnual">CHF 0</strong></div>
+            <p class="foot">* Netto/Jahr = (Netto/Monat × 12) − Setup</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -181,13 +334,16 @@
 
         <!-- Basic -->
         <article class="plan">
-          <div class="plan-head"><h3>Basic</h3><div class="price">CHF 199<span>/Monat</span></div></div>
+          <div class="plan-head">
+            <h3>Basic</h3>
+            <div class="price">CHF 199<span>/Monat</span></div>
+          </div>
           <ul class="feat">
-            <li>1 automatisierter Prozess</li>
-            <li>E-Mail-Support (Antwort bis 48h)</li>
-            <li>Monitoring & Alarme</li>
-            <li>Team-Onboarding</li>
-            <li>SLA & Reporting</li>
+            <li class="yes">1 automatisierter Prozess</li>
+            <li class="yes">E-Mail-Support (Antwort bis 48h)</li>
+            <li class="no">Monitoring & Alarme</li>
+            <li class="no">Team-Onboarding</li>
+            <li class="no">SLA & Reporting</li>
           </ul>
           <div class="spacer"></div>
           <button class="btn-order">Jetzt bestellen</button>
@@ -196,13 +352,16 @@
         <!-- Growth -->
         <article class="plan highlight">
           <div class="badge">Beliebt</div>
-          <div class="plan-head"><h3>Growth</h3><div class="price">CHF 499<span>/Monat</span></div></div>
+          <div class="plan-head">
+            <h3>Growth</h3>
+            <div class="price">CHF 499<span>/Monat</span></div>
+          </div>
           <ul class="feat">
-            <li class="up"><strong>bis 4 Prozesse</strong></li>
+            <li class="up"><strong>bis 4 Prozesse</strong><em>(+3 vs. Basic)</em></li>
             <li class="up"><strong>Monitoring & Alarme</strong></li>
             <li class="up"><strong>Onboarding für 3 Personen</strong></li>
-            <li>E-Mail & Chat-Support (Antwort bis 24h)</li>
-            <li>SLA & Reporting</li>
+            <li class="yes">E-Mail & Chat-Support (Antwort bis 24h)</li>
+            <li class="no">SLA & Reporting</li>
           </ul>
           <div class="spacer"></div>
           <button class="btn-order">Jetzt bestellen</button>
@@ -210,9 +369,12 @@
 
         <!-- Pro -->
         <article class="plan">
-          <div class="plan-head"><h3>Pro</h3><div class="price">CHF 999<span>/Monat</span></div></div>
+          <div class="plan-head">
+            <h3>Pro</h3>
+            <div class="price">CHF 999<span>/Monat</span></div>
+          </div>
           <ul class="feat">
-            <li class="up"><strong>bis 10 Prozesse</strong></li>
+            <li class="up"><strong>bis 10 Prozesse</strong><em>(+9 vs. Basic)</em></li>
             <li class="up"><strong>SLA & Prior-Support &lt;4h</strong></li>
             <li class="up"><strong>Team-Onboarding bis 10</strong></li>
             <li class="up"><strong>Monats-Reporting & KPI</strong></li>
@@ -222,9 +384,12 @@
         </article>
 
         <!-- Enterprise -->
-        <article class="plan">
+        <article class="plan enterprise">
           <div class="badge">Jahr</div>
-          <div class="plan-head"><h3>Enterprise</h3><div class="price">CHF 10’000<span>/Jahr</span></div></div>
+          <div class="plan-head">
+            <h3>Enterprise</h3>
+            <div class="price">CHF 10’000<span>/Jahr</span></div>
+          </div>
           <ul class="feat">
             <li class="up"><strong>unbegrenzte Prozesse*</strong></li>
             <li class="up"><strong>individuelle SLAs & 24/7-Alerting</strong></li>
@@ -233,6 +398,7 @@
           </ul>
           <div class="spacer"></div>
           <button class="btn-order">Jetzt bestellen</button>
+          <p class="small-note">* fair-use, nach Aufwand planbar</p>
         </article>
 
       </div>
@@ -243,23 +409,109 @@
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Kontakt</h2>
-      <p>Kontaktinformationen hier…</p>
+      <div class="contact-grid">
+        <div class="contact-form">
+          <h3 class="form-title">Nachricht senden</h3>
+          <form action="https://formsubmit.co/Ki4ubs@gmail.com" method="POST">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" id="nextUrl" name="_next" value="">
+            <input type="hidden" name="_subject" value="Neue Nachricht von der KI4U-Website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Danke für Ihre Nachricht! Unser Team meldet sich so schnell wie möglich.">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+            <div class="form-group"><label for="email">E-Mail</label><input type="email" id="email" name="email" required></div>
+            <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" name="phone"></div>
+            <div class="form-group"><label for="message">Nachricht</label><textarea id="message" name="message" rows="5" required></textarea></div>
+            <button type="submit" class="cta-button" style="width:100%;">Nachricht senden</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>Kontaktinformationen</h3>
+          <div class="contact-item"><span>📧</span><div><strong>E-Mail</strong><br>Ki4ubs@gmail.com</div></div>
+          <div class="contact-item"><span>📞</span><div><strong>Telefon</strong><br>+41 76 589 40 58</div></div>
+          <div class="contact-item"><span>📍</span><div><strong>Adresse</strong><br>Henric Petri-Strasse 23, 4051 Basel</div></div>
+          <div class="contact-item"><span>⏰</span><div><strong>Öffnungszeiten</strong><br>Mo–Fr: 08:00 – 18:00 Uhr</div></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-logo"><div class="logo-text">KI<span>4U</span></div></div>
-    <p>&copy; 2024 KI4U. Alle Rechte vorbehalten.</p>
-    <p class="slogan">Henric Petri-Strasse 23, 4051 Basel – Schweiz | ✉️ Ki4ubs@gmail.com | ☎️ +41 76 589 40 58</p>
+    <div class="container">
+      <div class="footer-logo">
+        <div class="logo-text" aria-hidden="true" style="font-size:1.2rem">KI<span>4U</span></div>
+      </div>
+      <p>&copy; 2024 KI4U. Alle Rechte vorbehalten.</p>
+      <p class="slogan">Henric Petri-Strasse 23, 4051 Basel – Schweiz | ✉️ Ki4ubs@gmail.com | ☎️ +41 76 589 40 58</p>
+    </div>
   </footer>
 
-  <!-- Corner Logo -->
-  <div class="corner-logo-text">KI<span>4U</span></div>
+  <!-- Text-Logo unten rechts fix -->
+  <div class="corner-logo-text" aria-hidden="true">KI<span>4U</span></div>
 
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script> lucide.createIcons(); </script>
+
+  <!-- Mobile-Menü, Formular-Weiterleitung, ROI-Logik -->
   <script>
-    const btn=document.getElementById('navToggle'), list=document.getElementById('primary-nav');
-    btn.addEventListener('click',()=>{list.classList.toggle('open')});
+    // Hamburger
+    (function(){
+      const btn=document.getElementById('navToggle'), list=document.getElementById('primary-nav');
+      btn.addEventListener('click',()=>{ list.classList.toggle('open'); btn.setAttribute('aria-expanded', list.classList.contains('open')); });
+    })();
+
+    // Danke-URL absolut setzen
+    (function(){
+      var next = document.getElementById('nextUrl');
+      if(next){
+        var base = location.origin + location.pathname.replace(/[^/]*$/, '');
+        next.value = base + 'danke.html';
+      }
+    })();
+
+    // ROI-Logik
+    (function(){
+      const fmt = (v)=>'CHF ' + (Math.round(v).toLocaleString('de-CH'));
+      function calc(){
+        const g = id => +document.getElementById(id).value || 0;
+        const hours=g('hours'), hourly=g('hourly'), errorCosts=g('errorCosts'), leads=g('leads'), leadValue=g('leadValue');
+        const effGain=g('effGain')/100, errRed=g('errRed')/100, leadUp=g('leadUp')/100;
+        const setup=g('setup'), monthly=g('monthly');
+
+        const savedLabor=hours*hourly*effGain;
+        const savedErrors=errorCosts*errRed;
+        const extraRevenue=leads*leadValue*leadUp;
+        const grossBenefit=savedLabor+savedErrors+extraRevenue;
+
+        const monthlyCosts=monthly;
+        const netMonthly=grossBenefit-monthlyCosts;
+        const payback=netMonthly>0?(setup/netMonthly):Infinity;
+        const netAnnual=(netMonthly*12)-setup;
+
+        const set=(id,val)=>document.getElementById(id).textContent=fmt(val);
+        set('saveLabor',savedLabor); set('saveErrors',savedErrors); set('extraRev',extraRevenue);
+        set('grossBenefit',grossBenefit); set('mCosts',monthlyCosts); set('sCosts',setup); set('monthlyCosts',monthlyCosts);
+
+        const nm = document.getElementById('netMonthly');
+        nm.textContent = fmt(netMonthly);
+        nm.style.color = netMonthly>=0 ? 'var(--green)' : 'var(--red)';
+
+        const pb = document.getElementById('payback');
+        pb.textContent = (payback===Infinity)?'–':payback.toFixed(1).replace('.',',');
+
+        const na = document.getElementById('netAnnual');
+        na.textContent = fmt(netAnnual);
+        na.style.color = netAnnual>=0 ? 'var(--green)' : 'var(--red)';
+      }
+      document.getElementById('calcBtn')?.addEventListener('click', calc);
+      document.getElementById('roiForm')?.addEventListener('input', calc);
+      calc();
+    })();
   </script>
 </body>
 </html>
